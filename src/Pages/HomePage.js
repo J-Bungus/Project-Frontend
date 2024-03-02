@@ -5,10 +5,6 @@ import './HomePage.css';
 import { useState, useEffect } from 'react';
 import axios from 'axios';
 
-function hexToBase64(str) {
-  return btoa(String.fromCharCode.apply(null, str.replace(/\r|\n/g, "").replace(/([\da-fA-F]{2}) ?/g, "0x$1 ").replace(/ +$/, "").split(" ")));
-}
-
 const HomePage = () => {
   const [ schoolList, setSchoolList ] = useState([]);
 
