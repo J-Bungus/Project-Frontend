@@ -2,7 +2,6 @@ import React, { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import axios from 'axios';
 import './CreatePage.css';
-import defaultImage from '../default-placeholder.png'
 
 const CreatePage = () => {
   const [schoolName, setSchoolName] = useState('');
