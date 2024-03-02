@@ -3,7 +3,9 @@ import { useNavigate } from 'react-router-dom';
 import axios from 'axios';
 import './CreatePage.css';
 
+
 const CreatePage = () => {
+  const instance = axios.create({ baseURL: 'https://dreamschools-182388d60dc9.herokuapp.com'});
   const [schoolName, setSchoolName] = useState('');
   const [about, setAbout] = useState('');
   const [image, setImage] = useState(null);
@@ -15,8 +17,7 @@ const CreatePage = () => {
     schoolData.append('about', about);
     schoolData.append('image', image);
     try {
-      console.log(image);
-      const res = await axios.post('/addSchool', schoolData, {
+      const res = await instance.post('/addSchool', schoolData, {
         headers: {
         'Content-Type': 'multipart/form-data'
       }});

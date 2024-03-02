@@ -6,10 +6,11 @@ import { useState, useEffect } from 'react';
 import axios from 'axios';
 
 const HomePage = () => {
+  const instance = axios.create({ baseURL: 'https://dreamschools-182388d60dc9.herokuapp.com'});
   const [ schoolList, setSchoolList ] = useState([]);
 
   useEffect(() => {
-    axios.get('/getSchools', {count: 10}, {
+    instance.get('/getSchools', {count: 10}, {
           headers: {
             'Content-Type': 'application/json'
           }
@@ -26,7 +27,7 @@ const HomePage = () => {
         <button>Create</button>
       </Link>
       <div className="school-list">
-        {console.log(schoolList) && schoolList.map((school, index) => (
+        {schoolList.map((school, index) => (
           <Link to={`/school/${school.id}`} key={index} className="school-card">
             <div className="image-container">
                 <img src={school.blobURL} alt={school.name} className="school-image"/>
