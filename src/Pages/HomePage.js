@@ -26,7 +26,7 @@ const HomePage = () => {
         <button>Create</button>
       </Link>
       <div className="school-list">
-        {schoolList.map((school, index) => (
+        {console.log(schoolList) && schoolList.map((school, index) => (
           <Link to={`/school/${school.id}`} key={index} className="school-card">
             <div className="image-container">
                 <img src={school.blobURL} alt={school.name} className="school-image"/>

@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import axios from 'axios';
 import './CreatePage.css';
+import defaultImage from '../default-placeholder.png'
 
 const CreatePage = () => {
   const [schoolName, setSchoolName] = useState('');
@@ -15,6 +16,7 @@ const CreatePage = () => {
     schoolData.append('about', about);
     schoolData.append('image', image);
     try {
+      console.log(image);
       const res = await axios.post('/addSchool', schoolData, {
         headers: {
         'Content-Type': 'multipart/form-data'
