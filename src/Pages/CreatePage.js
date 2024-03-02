@@ -29,15 +29,15 @@ const CreatePage = () => {
 
   return (
     <div className="create-page">
-      <h1 className="title">Create School</h1>
+      <h1 className="title">Create A School Listing</h1>
       <form onSubmit={handleSubmit} encType="multipart/form-data" className="create-form">
         <div className="section">
-          Name
+          <div> Name </div>
           <input
             type="text"
             placeholder="School Name"
             value={schoolName}
-            className="input-field"
+            className="name-field"
             onChange={(e) => setSchoolName(e.target.value)}
           />
         </div>
